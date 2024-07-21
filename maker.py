@@ -19,11 +19,10 @@ class UserActivityTracker:
         self.actions = ActionChains(self.driver)
         self.driver.maximize_window()
 
-        # Determine the script directory
         self.script_dir = os.path.dirname(os.path.abspath(__file__))
         self.log_file = os.path.join(self.script_dir, f"{site_name}_activity_log.txt")
 
-        print(f"\033[94mLog file path: {self.log_file}\033[0m")  # Debug: Print log file path
+        print(f"\033[94mLog file path: {self.log_file}\033[0m")
 
         self.is_tracking = True
         self.setup_event_listeners()
